@@ -12,6 +12,7 @@
     @include mobile{
       display: none;
     }
+
     @include tablet{
       display: none;
     }
@@ -32,7 +33,7 @@
         background-color: themed("bg");
 
         span {
-          color: gray;
+          color: themed("textColorSoft");
         }
 
         .user {
@@ -65,6 +66,10 @@
             }
 
             p {
+
+              @include laptop {
+                width: 150px;
+              }
               color: themed("textColorSoft");
             }
 

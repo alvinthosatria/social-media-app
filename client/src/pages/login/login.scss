@@ -6,11 +6,11 @@
   justify-content: center;
 
   .card {
-    width: 50%;
+    width: 60%;
     display: flex;
     background-color: white;
     border-radius: 10px;
-    min-height: 600px;
+    height: 500px;
     overflow: hidden;
 
     .left {
@@ -28,9 +28,6 @@
       h1 {
         font-size: 100px;
         line-height: 100px;
-      }
-      
-      p {
       }
 
       span {

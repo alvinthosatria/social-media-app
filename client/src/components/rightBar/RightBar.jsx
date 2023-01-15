@@ -19,6 +19,7 @@ const RightBar = () => {
               <button>dismiss</button>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -33,6 +34,7 @@ const RightBar = () => {
             </div>
           </div>
         </div>
+
         <div className="item">
           <span>Latest Activities</span>
           <div className="user">
@@ -47,6 +49,7 @@ const RightBar = () => {
             </div>
             <span>1 min ago</span>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -54,11 +57,12 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>Jane Doe</span> liked a post
               </p>
             </div>
             <span>1 min ago</span>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -66,11 +70,12 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>Jane Doe</span> liked a comment
               </p>
             </div>
             <span>1 min ago</span>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -78,12 +83,13 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>Jane Doe</span> posted
               </p>
             </div>
             <span>1 min ago</span>
           </div>
         </div>
+
         <div className="item">
           <span>Online Friends</span>
           <div className="user">
@@ -96,6 +102,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -106,6 +113,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -116,6 +124,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -126,6 +135,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -136,6 +146,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -146,6 +157,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -156,6 +168,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -166,6 +179,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -176,6 +190,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
@@ -186,6 +201,7 @@ const RightBar = () => {
               <span>Jane Doe</span>
             </div>
           </div>
+
           <div className="user">
             <div className="userInfo">
               <img
