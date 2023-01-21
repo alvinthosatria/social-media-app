@@ -1,0 +1,346 @@
+.theme-light .profile {
+  background-color: #f6f3f3;
+}
+
+.theme-light .profile .images {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.theme-light .profile .images .cover {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.theme-light .profile .images .profilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 200px;
+}
+
+.theme-light .profile .profileContainer {
+  padding: 20px 70px;
+}
+
+@media (max-width: 560px) {
+  .theme-light .profile .profileContainer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 980px) {
+  .theme-light .profile .profileContainer {
+    padding: 20px;
+  }
+}
+
+.theme-light .profile .profileContainer .uInfo {
+  height: 180px;
+  -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+  border-radius: 20px;
+  background-color: white;
+  color: #000;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 560px) {
+  .theme-light .profile .profileContainer .uInfo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 30vh;
+    padding: 20px;
+    margin-top: 100px;
+  }
+}
+
+.theme-light .profile .profileContainer .uInfo .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 980px) {
+  .theme-light .profile .profileContainer .uInfo .left {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.theme-light .profile .profileContainer .uInfo .left a {
+  color: #555;
+}
+
+.theme-light .profile .profileContainer .uInfo .center {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.theme-light .profile .profileContainer .uInfo .center span {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.theme-light .profile .profileContainer .uInfo .center .info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.theme-light .profile .profileContainer .uInfo .center .info .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  color: #555;
+}
+
+.theme-light .profile .profileContainer .uInfo .center .info .item span {
+  font-size: 12px;
+}
+
+.theme-light .profile .profileContainer .uInfo .center button {
+  border: none;
+  background-color: #5271ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-light .profile .profileContainer .uInfo .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 10px;
+}
+
+.theme-dark .profile {
+  background-color: #333;
+}
+
+.theme-dark .profile .images {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.theme-dark .profile .images .cover {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.theme-dark .profile .images .profilePic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 200px;
+}
+
+.theme-dark .profile .profileContainer {
+  padding: 20px 70px;
+}
+
+@media (max-width: 560px) {
+  .theme-dark .profile .profileContainer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 980px) {
+  .theme-dark .profile .profileContainer {
+    padding: 20px;
+  }
+}
+
+.theme-dark .profile .profileContainer .uInfo {
+  height: 180px;
+  -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+  border-radius: 20px;
+  background-color: #222;
+  color: whitesmoke;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 560px) {
+  .theme-dark .profile .profileContainer .uInfo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 30vh;
+    padding: 20px;
+    margin-top: 100px;
+  }
+}
+
+.theme-dark .profile .profileContainer .uInfo .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 980px) {
+  .theme-dark .profile .profileContainer .uInfo .left {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.theme-dark .profile .profileContainer .uInfo .left a {
+  color: lightgray;
+}
+
+.theme-dark .profile .profileContainer .uInfo .center {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.theme-dark .profile .profileContainer .uInfo .center span {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.theme-dark .profile .profileContainer .uInfo .center .info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.theme-dark .profile .profileContainer .uInfo .center .info .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  color: lightgray;
+}
+
+.theme-dark .profile .profileContainer .uInfo .center .info .item span {
+  font-size: 12px;
+}
+
+.theme-dark .profile .profileContainer .uInfo .center button {
+  border: none;
+  background-color: #5271ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.theme-dark .profile .profileContainer .uInfo .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 10px;
+}
+/*# sourceMappingURL=profile.css.map */

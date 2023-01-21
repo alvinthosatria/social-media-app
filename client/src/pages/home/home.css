@@ -1,0 +1,34 @@
+.theme-light .home {
+  padding: 20px 70px;
+  background-color: #f6f3f3;
+}
+
+@media (max-width: 560px) {
+  .theme-light .home {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 980px) {
+  .theme-light .home {
+    padding: 20px;
+  }
+}
+
+.theme-dark .home {
+  padding: 20px 70px;
+  background-color: #333;
+}
+
+@media (max-width: 560px) {
+  .theme-dark .home {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 980px) {
+  .theme-dark .home {
+    padding: 20px;
+  }
+}
+/*# sourceMappingURL=home.css.map */

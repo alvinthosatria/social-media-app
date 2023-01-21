@@ -14,7 +14,6 @@ export const getComments = (req, res) => {
 }
 
 export const addComment = (req, res) => {
-    //Checkpoint
     const token = req.cookies.accessToken;
     if (!token) return res.status(401).send("Not logged in")
 

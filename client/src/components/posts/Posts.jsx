@@ -10,8 +10,6 @@ const Posts = () => {
       return res.data;
     })
   );
-
-  console.log(data)
   
 
   return (
