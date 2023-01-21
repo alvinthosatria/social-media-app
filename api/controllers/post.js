@@ -31,19 +31,19 @@ export const addPost = (req, res) => {
     jwt.verify(token, "secretkey", (err, userInfo) => {
         if (err) return res.status(403).send("Token is not valid!")
 
-       
-        const q = `INSERT INTO posts ("desc", "img", "createdAt", "userId") VALUES ?`;
+        const q = "INSERT INTO posts (`desc`, `img`, `createdAt`, `userId`) VALUES (?)";
 
         const values = [
             req.body.desc,
             req.body.img,
-            moment(Date.now().format("YYYY-MM-DD HH:mm:ss")),
+            moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
             userInfo.id
         ]
 
-        db.query(q, [userInfo.id, userInfo.id], (err, data) => {
+        
+        db.query(q, [values], (err, data) => {
             if (err) return res.status(500).send(err);
-            return res.status(200).send(data);
+            return res.status(200).send("Post has been created!");
         })
     })
 }
