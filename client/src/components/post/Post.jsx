@@ -33,7 +33,7 @@ const Post = ({ post }) => {
       return makeRequest.post("/likes", {postId: post.id});
     },
     {
-      //Invalidate and refetch every query with a key that starts with `posts`
+      //Invalidate and refetch every query with a key that starts with `likes`
       onSuccess: () => {
         queryClient.invalidateQueries(["likes"])
       },
@@ -68,13 +68,17 @@ const Post = ({ post }) => {
         </div>
         <div className="info">
           <div className="item">
-            {isLoading 
-              ? "loading" 
-              : data.includes(currentUser.id) 
-                ? <FavoriteOutlinedIcon style={{color: "red"}} onClick={handleLike} /> 
-                : <FavoriteBorderOutlinedIcon onClick={handleLike} />
-            }
-            {data.length} Likes
+            {isLoading ? (
+                "loading"
+              ) : data.includes(currentUser.id) ? (
+                <FavoriteOutlinedIcon
+                  style={{ color: "red" }}
+                  onClick={handleLike}
+                />
+              ) : (
+                <FavoriteBorderOutlinedIcon onClick={handleLike} />
+              )}
+              {data?.length} Likes
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon />
