@@ -14,8 +14,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 
 const Post = ({ post }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [commentOpen, setCommentOpen] = useState(false);
-
   const {currentUser} = useContext(AuthContext);
 
   const { isLoading, error, data } = useQuery(['likes', post.id], () =>
@@ -24,6 +24,7 @@ const Post = ({ post }) => {
     })
   );
 
+  console.log(data);
   
   const queryClient = useQueryClient();
 
@@ -44,6 +45,21 @@ const Post = ({ post }) => {
     mutation.mutate(data.includes(currentUser.id))
   }
 
+  const deleteMutation = useMutation((postId) => {
+    return makeRequest.delete("/posts/"+postId);
+  },
+  {
+    //Invalidate and refetch every query with a key that starts with `likes`
+    onSuccess: () => {
+      queryClient.invalidateQueries(["posts"])
+    },
+  }
+);
+
+  const handleDelete = () => {
+    deleteMutation.mutate(post.id)
+  }
+
   return (
     <div className="post">
       <div className="container">
@@ -60,7 +76,8 @@ const Post = ({ post }) => {
               <span className="date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
-          <MoreHorizIcon />
+          <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
+          {menuOpen && post.userId === currentUser.id && <button onClick={handleDelete}>delete</button>}
         </div>
         <div className="content">
           <p>{post.desc}</p>

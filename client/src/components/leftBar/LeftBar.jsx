@@ -12,22 +12,22 @@ import Messages from "../../assets/10.png";
 import Tutorials from "../../assets/11.png";
 import Courses from "../../assets/12.png";
 import Fund from "../../assets/13.png";
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { AuthContext } from "../../context/authContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LeftBar = () => {
 
   const { currentUser } = useContext(AuthContext);
+  const Navigate = useNavigate();
 
   return (
     <div className="leftBar">
       <div className="container">
         <div className="menu">
-          <div className="user">
-            <img
-              src={currentUser.profilePic}
-              alt=""
-            />
+          <div className="user" onClick={() => Navigate(`/profile/${currentUser.id}`)}>
+            {currentUser.profilePic ? <img src={currentUser.profilePic} alt="" /> : <div className="icon"><AccountCircleOutlinedIcon /></div>}
             <span>{currentUser.name}</span>
           </div>
           <div className="item">

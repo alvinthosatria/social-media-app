@@ -64,6 +64,7 @@
         align-items: center;
         gap: 10px;
         font-weight: 500;
+        cursor: pointer;
 
         @include tablet{
           display: none;
@@ -74,6 +75,11 @@
           height: 30px;
           border-radius: 50%;
           object-fit: cover;
+        }
+
+        .icon {
+          display: flex;
+          align-items: center;
         }
 
         span {

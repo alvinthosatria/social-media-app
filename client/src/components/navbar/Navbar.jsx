@@ -7,7 +7,8 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { Link } from "react-router-dom";
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
@@ -15,6 +16,7 @@ import { AuthContext } from "../../context/authContext";
 const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
+  const Navigate = useNavigate();
 
   return (
     <div className="navbar">
@@ -38,11 +40,8 @@ const Navbar = () => {
         <PersonOutlinedIcon />
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
-        <div className="user">
-          <img
-            src={currentUser.profilePic}
-            alt=""
-          />
+        <div className="user" onClick={() => Navigate(`/profile/${currentUser.id}`)}>
+          {currentUser.profilePic ? <img src={currentUser.profilePic} alt="" /> : <div className="icon"><AccountCircleOutlinedIcon /></div>}
           <span>{currentUser.name}</span>
         </div>
       </div>

@@ -11,7 +11,6 @@ const Posts = ({userId}) => {
     })
   );
   
-
   return (
     <div className="posts">
         {error 

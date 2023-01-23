@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 import axios from "axios";
 
 const Register = () => {
+
+  const Navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     username: "",
