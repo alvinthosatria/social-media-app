@@ -9,14 +9,16 @@ const Update = ({ setOpenUpdate, user }) => {
 
     const [cover, setCover] = useState(null)
     const [profile, setProfile] = useState(null)
-
     const [texts, setTexts] = useState({
-        name: "",
-        city: "",
-        website: "",
+      email: user.email,
+      password: user.password,
+      name: user.name,
+      city: user.city,
+      website: user.website,
     });
 
     const upload = async (file) => {
+        console.log("this is the file: " + file)
         try {
           const formData = new FormData();
           formData.append("file", file)
@@ -30,7 +32,9 @@ const Update = ({ setOpenUpdate, user }) => {
 
     const handleChange = (e) => {
         setTexts((prev) => ({...prev, [e.target.name]: [e.target.value]}));
-    };
+    }
+
+    console.log(texts);
 
     const queryClient = useQueryClient();
 
@@ -38,7 +42,7 @@ const Update = ({ setOpenUpdate, user }) => {
           return makeRequest.put("/users", user);
         },
         {
-          //Invalidate and refetch every query with a key that starts with `likes`
+          //Invalidate and refetch
           onSuccess: () => {
               queryClient.invalidateQueries(["user"])
           },
@@ -86,6 +90,8 @@ const Update = ({ setOpenUpdate, user }) => {
               style={{ display: "none" }}
               onChange={(e) => setCover(e.target.files[0])}
             />
+
+
             <label htmlFor="profile">
               <span>Profile Picture</span>
               <div className="imgContainer">
@@ -109,14 +115,14 @@ const Update = ({ setOpenUpdate, user }) => {
           </div>
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             value={texts.email}
             name="email"
             onChange={handleChange}
           />
           <label>Password</label>
           <input
-            type="text"
+            type="password"
             value={texts.password}
             name="password"
             onChange={handleChange}

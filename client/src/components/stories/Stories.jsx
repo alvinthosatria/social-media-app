@@ -1,10 +1,20 @@
 import { useContext } from "react";
 import "./stories.scss"
 import { AuthContext } from "../../context/authContext"
+import { useQuery } from '@tanstack/react-query'
+import { makeRequest } from "../../axios";
 
 const Stories = () => {
 
   const {currentUser} = useContext(AuthContext)
+
+  const { isLoading, error, data } = useQuery(["stories"], () =>
+    makeRequest.get("/stories").then((res) => {
+      return res.data;
+    })
+  )
+
+  //TODO Add story using react-query mutations and use upload function.
 
   //TEMPORARY
   const stories = [
