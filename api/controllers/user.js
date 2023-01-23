@@ -25,22 +25,21 @@ export const updateUser = (req, res) => {
 
         const q = "UPDATE users SET `name`=?,`city`=?,`website`=?,`profilePic`=?,`coverPic`=? WHERE id=? ";
 
-        const salt = bcrypt.genSaltSync(10);
-        const hashedPassword = bcrypt.hashSync(req.body.password, salt);
-
-        const values = [
-            req.body.name,
-            req.body.city,
-            req.body.website,
-            req.body.coverPic,
-            req.body.profilePic,
-            userInfo.id,
-        ]
-
-        db.query(q, values, (err, data) => {
-            if (err) res.status(500).send(err);
-            if (data.affectedRows > 0) return res.send("Updated!");
-            return res.status(403).send("You can update only your post!")
-        })
+        db.query(
+            q,
+            [
+                req.body.name,
+                req.body.city,
+                req.body.website,
+                req.body.profilePic,
+                req.body.coverPic,
+                userInfo.id
+            ],
+            (err, data) => {
+              if (err) res.status(500).json(err);
+              if (data.affectedRows > 0) return res.json("Updated!");
+              return res.status(403).json("You can update only your post!");
+            }
+          );
     }) 
 }

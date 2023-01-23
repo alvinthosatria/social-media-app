@@ -41,7 +41,7 @@ const Navbar = () => {
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user" onClick={() => Navigate(`/profile/${currentUser.id}`)}>
-          {currentUser.profilePic ? <img src={currentUser.profilePic} alt="" /> : <div className="icon"><AccountCircleOutlinedIcon /></div>}
+          {currentUser.profilePic ? <img src={"/upload/"+currentUser.profilePic} alt="" /> : <div className="icon"><AccountCircleOutlinedIcon /></div>}
           <span>{currentUser.name}</span>
         </div>
       </div>
