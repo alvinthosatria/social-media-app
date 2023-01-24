@@ -18,13 +18,19 @@ const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
   const {currentUser} = useContext(AuthContext);
 
+  //fetch likes of a post
   const { isLoading, error, data } = useQuery(['likes', post.id], () =>
     makeRequest.get("/likes?postId="+post.id).then((res) => {
       return res.data;
     })
   );
 
-  console.log(data);
+  //fetch comments of a post
+  const { data: commentsData } = useQuery(['comments'], () =>
+    makeRequest.get("/comments?postId="+post.id).then((res) => {
+      return res.data;
+    })
+  );
   
   const queryClient = useQueryClient();
 
@@ -65,7 +71,7 @@ const Post = ({ post }) => {
       <div className="container">
         <div className="user">
           <div className="userInfo">
-            <img src={post.profilePic} alt="" />
+            <img src={"/upload/"+post.profilePic} alt="" />
             <div className="details">
               <Link
                 to={`/profile/${post.userId}`}
@@ -99,7 +105,7 @@ const Post = ({ post }) => {
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon />
-            12 Comments
+            {commentsData?.length} Comments
           </div>
           <div className="item">
             <ShareOutlinedIcon />

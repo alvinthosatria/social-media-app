@@ -22,8 +22,6 @@ const LeftBar = () => {
   const { currentUser } = useContext(AuthContext);
   const Navigate = useNavigate();
 
-  console.log("left bar profile pic: ", currentUser.profilePic)
-
   return (
     <div className="leftBar">
       <div className="container">
