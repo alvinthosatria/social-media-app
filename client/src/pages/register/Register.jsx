@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./register.scss";
 import axios from "axios";
 import { makeRequest } from "../../axios";
@@ -94,6 +94,14 @@ const Register = () => {
             <input type="text" placeholder="Name" name="name" onChange={handleChange} />
             {err && err}
             <button onClick={handleClick}>Register</button>
+
+            <div className="mobile-login">
+              <p>Have an account?</p>
+              <Link to="/login">
+                <button>Login</button>
+              </Link>
+            </div>
+            
           </form>
         </div>
       </div>

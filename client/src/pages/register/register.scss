@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 .register {
   height: 100vh;
   background-color: rgb(193, 190, 255);
@@ -14,6 +16,10 @@
     height: 550px;
     overflow: hidden;
 
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+
     .left {
       flex: 1;
       background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
@@ -26,9 +32,24 @@
       gap: 30px;
       color: white;
 
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        padding: 25px;
+        gap: 25px;
+      }
+
       h1 {
         font-size: 90px;
         line-height: 90px;
+
+        @include tablet {
+          font-size: 65px;
+          line-height: 55px;
+          margin-bottom: 20px;
+        }
       }
 
       span {
@@ -54,6 +75,25 @@
       gap: 50px;
       justify-content: center;
       overflow: scroll;
+
+      .mobile-login {
+        display: none;
+
+        @include mobile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        p {
+          font-size: 12px;
+        }
+
+        button {
+          color: #938eef;
+          background-color: white;
+        }
+      }
 
       &::-webkit-scrollbar {
         display: none;
@@ -129,6 +169,10 @@
           color: white;
           font-weight: bold;
           cursor: pointer;
+
+          @include mobile {
+            width: 75%;
+          }
         }
       }
     }
