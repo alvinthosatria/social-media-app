@@ -69,6 +69,7 @@
       flex-direction: column;
       gap: 50px;
       justify-content: center;
+      overflow: scroll;
 
       @include mobile {
         padding: 25px;
@@ -97,6 +98,31 @@
           color: white;
           font-weight: bold;
           cursor: pointer;
+        }
+      }
+
+      .mobile-register {
+        display: none;
+  
+        @include mobile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+  
+        p {
+          font-size: 12px;
+        }
+  
+        button {
+          color: #938eef;
+          background-color: white;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 800;
+          text-decoration: none;
         }
       }
     }

@@ -47,6 +47,7 @@ const Login = () => {
             <button>Register</button>
           </Link>
         </div>
+
         <div className="right">
           <h1>Login</h1>
           <form>
@@ -55,6 +56,13 @@ const Login = () => {
             {err && err}
             <button onClick={handleLogin}>Login</button>
           </form>
+
+          <div className="mobile-register">
+            <p>Don't have an account?</p>
+            <Link to="/register">
+              <button>Register</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

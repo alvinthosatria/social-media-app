@@ -7,8 +7,7 @@ import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
 
 const Register = () => {
 
-  const [profile, setProfile] = useState(null)
-  const [registered, setRegistered] = useState(false);
+  const [profile, setProfile] = useState(null);
 
   const [inputs, setInputs] = useState({
     username: "",
@@ -48,7 +47,6 @@ const Register = () => {
       await axios.post("http://localhost:3000/api/auth/register", {...inputs, profilePic: profileUrl});
 
       setProfile(null);
-      setRegistered(true);
       alert("You have registered an account!");
 
     } catch(err) {
