@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 .login {
   height: 100vh;
   background-color: rgb(193, 190, 255);
@@ -25,9 +27,24 @@
       gap: 30px;
       color: white;
 
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet {
+        padding: 25px;
+        gap: 25px;
+      }
+
       h1 {
         font-size: 100px;
         line-height: 100px;
+
+        @include tablet {
+          font-size: 65px;
+          line-height: 75px;
+          margin-bottom: 20px;
+        }
       }
 
       span {
@@ -53,6 +70,10 @@
       gap: 50px;
       justify-content: center;
 
+      @include mobile {
+        padding: 25px;
+      }
+
       h1 {
       color: #555;
       }
@@ -63,9 +84,9 @@
         gap: 30px;
         
         input {
-        border: none;
-        border-bottom: 1px solid lightgray;
-        padding: 20px 10px;
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
         }
         
         button {
