@@ -56,6 +56,6 @@ app.use("/api/auth", authRoutes)
 app.use("/api/relationships", relationshipRoutes)
 app.use(express.static(path.join(__dirname + "/public"))) //for deployment
 
-app.listen(8800, (req, res) => {
+app.listen(process.env.PORT || 3000, (req, res) => {
     console.log("API working!");
 })

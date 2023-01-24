@@ -45,7 +45,7 @@ const Register = () => {
       let profileUrl;
       profileUrl = profile && await upload(profile);
       console.log(profileUrl);
-      await axios.post("http://localhost:8800/api/auth/register", {...inputs, profilePic: profileUrl});
+      await axios.post("http://localhost:3000/api/auth/register", {...inputs, profilePic: profileUrl});
 
       setProfile(null);
       setRegistered(true);
