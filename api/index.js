@@ -10,6 +10,8 @@ import relationshipRoutes from "./routes/relationships.js"
 import cors from "cors"
 import multer from "multer"
 import cookieParser from "cookie-parser"
+import path from 'path';
+const __dirname = path.resolve();
 
 //middlewares
 app.use(express.json()); //to send json objects
@@ -48,10 +50,11 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 //whenever we go to that page, we will go to userRoutes which have different endpoints
 app.use("/api/users", userRoutes) 
 app.use("/api/posts", postRoutes) 
-app.use("/api/likes",likeRoutes)
+app.use("/api/likes", likeRoutes)
 app.use("/api/comments", commentRoutes)
-app.use("/api/auth",authRoutes)
-app.use("/api/relationships",relationshipRoutes)
+app.use("/api/auth", authRoutes)
+app.use("/api/relationships", relationshipRoutes)
+app.use(express.static(path.join(__dirname + "/public"))) //for deployment
 
 app.listen(8800, (req, res) => {
     console.log("API working!");
