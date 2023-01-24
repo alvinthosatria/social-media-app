@@ -18,6 +18,8 @@ const Navbar = () => {
   const { currentUser } = useContext(AuthContext);
   const Navigate = useNavigate();
 
+  console.log("this is current user: ", currentUser);
+
   return (
     <div className="navbar">
       <div className="left">

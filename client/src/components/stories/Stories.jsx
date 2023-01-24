@@ -8,11 +8,11 @@ const Stories = () => {
 
   const {currentUser} = useContext(AuthContext)
 
-  const { isLoading, error, data } = useQuery(["stories"], () =>
-    makeRequest.get("/stories").then((res) => {
-      return res.data;
-    })
-  )
+  // const { isLoading, error, data } = useQuery(["stories"], () =>
+  //   makeRequest.get("/stories").then((res) => {
+  //     return res.data;
+  //   })
+  // )
 
   //TODO Add story using react-query mutations and use upload function.
 

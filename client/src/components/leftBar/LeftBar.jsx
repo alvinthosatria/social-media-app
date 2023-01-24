@@ -22,12 +22,14 @@ const LeftBar = () => {
   const { currentUser } = useContext(AuthContext);
   const Navigate = useNavigate();
 
+  console.log("left bar profile pic: ", currentUser.profilePic)
+
   return (
     <div className="leftBar">
       <div className="container">
         <div className="menu">
           <div className="user" onClick={() => Navigate(`/profile/${currentUser.id}`)}>
-            {currentUser.profilePic ? <img src={currentUser.profilePic} alt="" /> : <div className="icon"><AccountCircleOutlinedIcon /></div>}
+            {currentUser.profilePic ? <img src={"/upload/"+currentUser.profilePic} alt="" /> : <div className="icon"><AccountCircleOutlinedIcon /></div>}
             <span>{currentUser.name}</span>
           </div>
           <div className="item">

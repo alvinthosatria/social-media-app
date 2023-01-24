@@ -53,20 +53,72 @@
       flex-direction: column;
       gap: 50px;
       justify-content: center;
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       h1 {
-      color: #555;
+        color: #555;
       }
       
       form {
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        .file {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          position: relative;
+          margin: auto;
+
+          input {
+            border: solid;
+            position: absolute;
+            top: 30px;
+            width: 75px;
+            height: 55px;
+            opacity: 0;
+            cursor: pointer;
+          }
+
+          label {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: gray;
+            font-size: 14px;
+    
+            .imgContainer {
+              position: relative;
+              img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+              }
+    
+              .icon {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                font-size: 30px;
+                color: lightgray;
+                cursor: pointer;
+              }
+            }
+          }
+        }
         
         input {
-        border: none;
-        border-bottom: 1px solid lightgray;
-        padding: 20px 10px;
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
         }
         
         button {

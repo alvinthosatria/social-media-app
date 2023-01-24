@@ -26,7 +26,7 @@ const Update = ({ setOpenUpdate, user }) => {
         } catch(err) {
           console.log(err)
         }
-      }
+    }
 
     const handleChange = (e) => {
         setTexts((prev) => ({...prev, [e.target.name]: [e.target.value]}));

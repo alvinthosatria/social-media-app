@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 import axios from "axios";
+import { makeRequest } from "../../axios";
+import InsertPhotoOutlinedIcon from '@mui/icons-material/InsertPhotoOutlined';
 
 const Register = () => {
 
-  const Navigate = useNavigate();
+  const [profile, setProfile] = useState(null)
+  const [registered, setRegistered] = useState(false);
 
   const [inputs, setInputs] = useState({
     username: "",
@@ -15,6 +18,19 @@ const Register = () => {
   })
 
   const [err, setErr] = useState(null)
+
+  const upload = async (file) => {
+    console.log("this is the file: " + file)
+    try {
+      const formData = new FormData();
+      formData.append("file", file)
+      const res = await makeRequest.post("/upload", formData);
+      return res.data;
+
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   const handleChange = (e) => {
     setInputs((prev) => ({...prev, [e.target.name]: e.target.value}))
@@ -26,7 +42,15 @@ const Register = () => {
     e.preventDefault()
 
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs)
+      let profileUrl;
+      profileUrl = profile && await upload(profile);
+      console.log(profileUrl);
+      await axios.post("http://localhost:8800/api/auth/register", {...inputs, profilePic: profileUrl});
+
+      setProfile(null);
+      setRegistered(true);
+      alert("You have registered an account!");
+
     } catch(err) {
       setErr(err.response.data)
     }
@@ -47,9 +71,23 @@ const Register = () => {
           <button>Login</button>
           </Link>
         </div>
+
         <div className="right">
           <h1>Register</h1>
           <form>
+
+            <div className="file">
+              <label htmlFor="profile">
+                <span>Profile Picture</span>
+                <div className="imgContainer">
+                  <img src={profile ? URL.createObjectURL(profile) : "/upload/" + profile} alt="" />
+                  <InsertPhotoOutlinedIcon className="icon" />
+                </div>
+              </label>
+              <input type="file" id="profile" onChange={(e) => setProfile(e.target.files[0])} />
+            </div>
+
+
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
             <input type="email" placeholder="Email" name="email" onChange={handleChange} />
             <input type="password" placeholder="Password" name="password" onChange={handleChange} />
