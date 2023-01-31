@@ -10,8 +10,6 @@ import relationshipRoutes from "./routes/relationships.js"
 import cors from "cors"
 import multer from "multer"
 import cookieParser from "cookie-parser"
-import path from 'path';
-const __dirname = path.resolve();
 
 //middlewares
 app.use(express.json()); //to send json objects
@@ -21,6 +19,7 @@ app.use((req, res, next) => {
     //then continue doing our operations
     next();
 }) 
+
 //CORS “Cross-Origin Resource Sharing" is used so that only the localhost:3000 URL can access the API
 app.use(
     cors({
@@ -54,8 +53,7 @@ app.use("/api/likes", likeRoutes)
 app.use("/api/comments", commentRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/relationships", relationshipRoutes)
-app.use(express.static(path.join(__dirname + "/public"))) //for deployment
 
-app.listen(process.env.PORT || 3000, (req, res) => {
+app.listen(process.env.PORT || 8080, (req, res) => {
     console.log("API working!");
 })
