@@ -54,6 +54,6 @@ app.use("/api/comments", commentRoutes)
 app.use("/api/auth", authRoutes)
 app.use("/api/relationships", relationshipRoutes)
 
-app.listen(process.env.PORT || 8080, (req, res) => {
+app.listen(process.env.PORT || 8800, (req, res) => {
     console.log("API working!");
 })

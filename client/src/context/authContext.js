@@ -12,7 +12,7 @@ export const AuthContextProvider = ({ children }) => {
   //After the login process, we have to store the currentUser in authentication context API
   const login = async (inputs) => {
     //inputs from the login page
-    const res = await axios.post("http://localhost:8080/api/auth/login", inputs, {
+    const res = await axios.post("http://localhost:8800/api/auth/login", inputs, {
       withCredentials: true, //important because we're working with cookies
     });
 

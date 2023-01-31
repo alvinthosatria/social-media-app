@@ -55,7 +55,7 @@ const Post = ({ post }) => {
     return makeRequest.delete("/posts/"+postId);
   },
   {
-    //Invalidate and refetch every query with a key that starts with `likes`
+    //Invalidate and refetch every query with a key that starts with `posts`
     onSuccess: () => {
       queryClient.invalidateQueries(["posts"])
     },
