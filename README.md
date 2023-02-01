@@ -3,6 +3,7 @@ Cloud database can be used.
 Change the connection details as follows:
 
 1.) In api -> connection.js change host, user, password, database.
+
 host: "us-cdbr-east-06.cleardb.net",
 user: "b267ba3d8a7037",
 password: "0e3cbcab",
