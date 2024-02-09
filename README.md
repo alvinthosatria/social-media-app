@@ -1,4 +1,5 @@
 ﻿# social-media-app
+Developed with ReactJS and NodeJS  
 Cloud database can be used.
 Change the connection details as follows:
 
